@@ -1,0 +1,16 @@
+<router-outlet></router-outlet>
+<div>
+   <div class="searchWrapper" >
+    <input class="inputField" #box (keyup)="getValue(box.value)" type="text" placeholder="Search a Pokemon" name="search">
+     <a [routerLink]="['/search-pokemon-component']" routerLinkActive="active"><button class="inputButton" type="submit" (click)="getSearchPokemonInformation()"> Go! </button></a>
+   </div>
+</div>
+<router-outlet></router-outlet>
+<div class="pokemon-card-container">
+  <app-pokemon-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon">
+  </app-pokemon-card>
+</div>
+<!-- <div>
+  <app-search-pokemon></app-search-pokemon>
+</div> -->
+
